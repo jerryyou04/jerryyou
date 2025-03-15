@@ -1,4 +1,5 @@
 {
+    "cleanUrls": true,
     "rewrites": [
       { "source": "/resume", "destination": "/resume/index.html" }
     ]
