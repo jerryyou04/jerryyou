@@ -1,0 +1,251 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Co-op Work Term Report</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            background-color: #f8f9fa;
+            color: #333;
+        }
+        header {
+            background-color: #333;
+            color: #fff;
+            padding: 20px 0;
+            text-align: center;
+        }
+        .container-fluid {
+            display: flex;
+            flex-direction: row;
+        }
+        .sidebar {
+            min-width: 250px;
+            max-width: 250px;
+            background-color: #222;
+            color: #fff;
+            height: 100vh;
+            padding: 20px;
+            position: fixed;
+        }
+        .sidebar a {
+            color: #ff9800;
+            text-decoration: none;
+            display: block;
+            margin: 10px 0;
+        }
+        .sidebar a:hover {
+            text-decoration: underline;
+        }
+        .content {
+            margin-left: 270px;
+            padding: 20px;
+            background-color: #fff;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            border-radius: 5px;
+        }
+        h2 {
+            border-bottom: 2px solid #ff9800;
+            padding-bottom: 5px;
+            margin-bottom: 20px;
+        }
+        footer {
+            text-align: center;
+            margin-top: 30px;
+            padding: 10px 0;
+            background-color: #333;
+            color: #fff;
+        }
+        .goal-card {
+            background: #fff;
+            border: 1px solid #ddd;
+            border-radius: 10px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            margin-bottom: 20px;
+            padding: 20px;
+            transition: transform 0.2s, box-shadow 0.2s;
+        }
+        .goal-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 6px 10px rgba(0, 0, 0, 0.15);
+        }
+        .goal-title {
+            /* color: #ff9800;
+            margin-bottom: 10px;
+            font-size: 1.25rem; */
+            font-weight: bold;
+        }
+        .goal-category {
+            font-size: 1rem;
+            font-weight: bold;
+            color: #555;
+            margin-bottom: 15px;
+        }
+
+        .image-container {
+            display: flex;
+            justify-content: center; /* Centers images horizontally */
+            align-items: center; /* Centers images vertically */
+            gap: 10px; /* Adds space between images */
+            flex-wrap: wrap; /* Ensures images wrap to the next row on smaller screens */
+        }
+
+        .image-container img {
+            max-width: 45%; /* Ensures images scale down to fit the screen */
+            height: auto; /* Maintains the aspect ratio */
+            object-fit: contain; /* Ensures images look good when resized */
+        }
+    </style>
+</head>
+<body>
+
+<header>
+    <h1>Co-op Work Term Report</h1>
+    <p>My Second Co-op Experience Reflection Sep 2024 - Dec 2024</p>
+</header>
+
+<div class="container-fluid">
+    <div class="sidebar">
+        <h4>Navigation</h4>
+        <a href="#introduction">Abstract/Introduction</a>
+        <a href="#employer-info">Employer Information</a>
+        <a href="#goals">Learning Goals</a>
+        <a href="#job-description">Job Description</a>
+        <a href="#conclusion">Conclusion</a>
+        <a href="#acknowledgments">Acknowledgments</a>
+    </div>
+
+    <div class="content">
+        <!-- Learning Goals Section -->
+
+
+        <!-- Abstract/Introduction -->
+        <section id="introduction">
+            <h2>Abstract/Introduction</h2>
+            <p>In this report, I will be going over my responsibilities and progress during my Fall 2024 co-op term as a Data Engineer Co-op at Johnson Electric in Ancaster, Ontario. Over the course of the term, I contributed to major projects involving data extraction from factory machines into an PostgreSQL database, creating visualizations and dashboards with SQL data, and Django app development, as well as smaller IT tasks. Working fully in-person, I had the opportunity to develop my technical and professional skills while supporting both the office and factory operations. I was lucky enough to experience both what it is like to work in a corporate office as well as on the shop floor in a factory.</p>
+        </section>
+
+        <!-- Information about the Employer -->
+        <section id="employer-info">
+            <h2>Information about the Employer</h2>
+            <p>Johnson Electric is a company specializing in manufacturing motion systems and electronics, serving the automotive sector. It has around 30,000 employees, and has facilities all over the world in places such as Brazil, Poland, and Turkey. Its annual revenue is about 3.8 billion USD.</p>
+            <p>Our location in Ancaster (near Hamilton), Ontario, is 1 of 3 plants in Canada and specializes specifically in powder metal and powder metal components. Our branch had a corporate office and a factory plant, and while I mainly worked in the corporate office, I would occasionally go down to the factory for some tasks.</p>
+            <div class="image-container">
+                <img src="/second-work-report/logo.png" loading="lazy" alt="Johnson Electric Logo">
+                <img src="/second-work-report/building.jpg" loading="lazy" alt="Building">
+            </div>
+        </section>
+
+        <section id="goals">
+            <h2>Learning Goals</h2>
+            <div class="row">
+                <div class="col-md-6">
+                    <div class="goal-card">
+                        <div class="goal-category">Technological Literacy</div>
+                        <div class="goal-title">Improve my understanding of modern digital tools, especially Python and IIOT systems, in a manufacturing environment.</div>
+                        <p><strong>Reflection:</strong> During my co-op term, I built a Django app and ETL systems to load data into PostgreSQL and display it on a dashboard. This work helped me connect theory to practice and improved my understanding of Python’s use in data integration. It also gave me the skills and confidence to address complex technical problems in a manufacturing environment.</p>
+                    </div>
+                </div>
+
+                <div class="col-md-6">
+                    <div class="goal-card">
+                        <div class="goal-category">Critical & Creative Thinking</div>
+                        <div class="goal-title">Develop better problem-solving skills by finding ways to improve production using coding and automation.</div>
+                        <p><strong>Reflection:</strong> Over the course of my work, I designed solutions for factory workers who were unsure of their needs. I took initiative by analyzing workflows, making assumptions about useful features, and implementing them. Developing a Django app and ETL systems taught me to think beyond clear requirements and focus on building practical, user-friendly tools. This experience improved my problem-solving skills and highlighted the importance of clear communication and creativity in delivering effective solutions.</p>
+                    </div>
+                </div>
+
+                <div class="col-md-6">
+                    <div class="goal-card">
+                        <div class="goal-category">Integrative Communication</div>
+                        <div class="goal-title">Improve my ability to clearly communicate technical concepts and progress to non-technical teams to ensure effective collaboration across departments.</div>
+                        <p><strong>Reflection:</strong> I regularly explained how to use the tools I developed to colleagues without technical backgrounds. This required breaking down complex processes into simple steps and avoiding technical language. By presenting project updates in team meetings, I also practiced making technical concepts accessible and relevant to non-technical teams.</p>
+                    </div>
+                </div>
+
+                <div class="col-md-6">
+                    <div class="goal-card">
+                        <div class="goal-category">Professional & Ethical Behaviour</div>
+                        <div class="goal-title">Ensure that all solutions and processes I develop follow ethical standards, particularly concerning safety, sustainability, and data privacy.</div>
+                        <p><strong>Reflection:</strong> Especially during server setup for SQL databases, I had to make sure that a lot of data couldn’t be accessed from certain endpoints. I ensured data privacy by implementing secure handling practices and minimizing exposure of sensitive information. </p>
+                    </div>
+                </div>
+
+                <div class="col-md-6">
+                    <div class="goal-card">
+                        <div class="goal-category">Inquiry & Analysis</div>
+                        <div class="goal-title">Develop strong analytical skills to effectively interpret process data and identify opportunities for automation and process improvements.</div>
+                        <p><strong>Reflection:</strong> In my ETL project, I implemented logging systems to monitor production data and identify anomalies. These systems allowed me to detect when something went wrong in the workflow and send out timely alerts to address issues. This process trained my ability to analyze data patterns and recognize irregularities. It also reinforced the value of proactive monitoring and automation in maintaining smooth operations and minimizing downtime. </p>
+                    </div>
+                </div>
+
+                <div class="col-md-6">
+                    <div class="goal-card">
+                        <div class="goal-category">Overall Reflection</div>
+                        <!-- <div class="goal-title">Develop strong analytical skills to effectively interpret process data and identify opportunities for automation and process improvements.</div> -->
+                        <p><strong>Reflection:</strong> During my co-op term, I gained experience developing Django applications, creating ETL systems, and integrating data with PostgreSQL dashboards. I learned how to design practical tools for non-technical users, often taking initiative to bridge unclear requirements with effective solutions. Setting up logging systems taught me to proactively monitor workflows, identify issues, and send timely alerts, reinforcing the importance of data-driven decision-making. This experience also deepened my understanding of ethical considerations, including data privacy and sustainability, and improved my ability to communicate technical concepts clearly across teams. Overall, this term enhanced both my technical expertise and my problem-solving, analytical, and communication skills. </p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Job Description -->
+    <section id="job-description">
+        <h2>Job Description</h2>
+        <p>At Johnson Electric, my role focused on two major projects and several IT-related tasks to support factory operations:</p>
+        <ul>
+            <li>
+                <strong>PostgreSQL Data Extraction and Visualization:</strong> 
+                I automated data extraction from an outdated Windows 7 system connected to factory equipment but isolated from the internet. Using Python and Windows Task Scheduler, I retrieved real-time production data and uploaded it to a central PostgreSQL database. This allowed workers to access and analyze the data through dashboards created in Metabase and Grafana, improving visibility and decision-making.
+            </li>
+            <li>
+                <strong>Django Applications for Factory Operations:</strong> 
+                I developed two Django applications to improve efficiency and reduce reliance on manual processes. The first app allowed workers to submit tool break reports with pictures and details, helping track inventory and streamline maintenance. The second app digitized paper forms used by factory workers, storing submissions alongside employee details for better record-keeping and accessibility.
+            </li>
+            <li>
+                <strong>Miscellaneous IT Support:</strong> 
+                I assisted with various IT tasks, including setting up and troubleshooting servers, routers, and computers. I also supported shop-floor operations by addressing technical issues and ensuring seamless system functionality.
+            </li>
+        </ul>
+        <h3>Technologies Used</h3>
+        <ul>
+            <li><strong>Django Project:</strong> Python, Django, HTML/CSS, JavaScript, Bootstrap, Htmx, MySQL, Gunicorn, Docker</li>
+            <li><strong>SQL Database Project:</strong> SQL: PostgreSQL, PgAdmin, Adminer, Docker, Python, Pandas, SQLAlchemy, Metabase, Grafana, Windows Task Scheduler</li>
+            <li><strong>Miscellaneous Technologies:</strong> Excel, Router and Network Management, WinSCP, VNC, RDP, Batch Scripts, VMware</li>
+        </ul>
+        <div class="image-container">
+            <img src="/second-work-report/python.png" loading="lazy" alt="python">
+            <img src="/second-work-report/postgresql.jpg" loading="lazy" alt="postgresql">
+        </div>
+    </section>
+
+
+        <!-- Conclusion -->
+        <section id="conclusion">
+            <h2>Conclusion</h2>
+            <p>Overall, my work term at Johnson Electric was an enriching experience that allowed me to grow both technically and professionally. I successfully completed challenging projects, enhanced my problem-solving abilities, and gained valuable insights into industrial operations. The skills and experiences from this term will undoubtedly benefit my future endeavors in data engineering and software development.</p>
+        </section>
+
+        <!-- Acknowledgments -->
+        <section id="acknowledgments">
+            <h2>Acknowledgments</h2>
+            <p>I would like to thank my supervisor Dave Gleba for mentoring me and teaching me some of the most practical things I've learned in software development. I would also like to thank Johnson Electric for all the free food and merch. Happy 65th Birthday to Johnson Electric!</p>
+            <p>Here's a picture of my desk and the factory!</p>
+            <div class="image-container">
+                <img src="/second-work-report/desk.jpg" loading="lazy" alt="desk">
+                <img src="/second-work-report/factory.jpg" loading="lazy" alt="factory">
+            </div>
+        </section>
+    </div>
+</div>
+
+<footer>
+    <p>Jerry You - Co-op Work Term Report Sep 2024 - Dec 2024</p>
+</footer>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
