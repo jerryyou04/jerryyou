@@ -40,7 +40,7 @@ export default function App() {
             <a href="https://linkedin.com/in/jerryyou04" target="_blank" rel="noopener noreferrer" className="flex items-center gap-2 text-white hover:text-gray-300 no-underline transition">
               <FaLinkedin size={24} /> LinkedIn
             </a>
-            <a href="/resume.html" target="_blank" rel="noopener noreferrer" className="text-white hover:text-gray-300 transition">
+            <a href="/resume" target="_blank" rel="noopener noreferrer" className="text-white hover:text-gray-300 transition">
               📄 Resume
             </a>
           </div>
