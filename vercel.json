@@ -2,6 +2,14 @@
     "cleanUrls": true,
     "rewrites": [
       { "source": "/resume", "destination": "/resume/index.html" }
+    ],
+    "headers": [
+      {
+        "source": "/resume/index.html",
+        "headers": [
+          { "key": "Cache-Control", "value": "public, max-age=0, must-revalidate" }
+        ]
+      }
     ]
   }
   
