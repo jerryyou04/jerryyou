@@ -8,7 +8,7 @@ export default function App() {
   return (
     <div className={darkMode ? "dark" : ""}>
       <AuroraBackground darkMode={darkMode}>
-        {/* Dark Mode Toggle Button */}
+        {/* dark mode toggle */}
         <button
           onClick={() => setDarkMode(!darkMode)}
           className="group absolute top-6 right-6 p-3 rounded-full bg-gray-700 hover:bg-gray-600 transition outline-none focus:outline-none focus-visible:ring-0 active:ring-0 select-none"
@@ -23,16 +23,16 @@ export default function App() {
 
 
         <div className="text-center">
-          {/* Title - Always White */}
+          {/* title white*/}
           <h1 className="text-5xl font-bold text-white drop-shadow-lg">
             Hi, I'm Jerry You
           </h1>
-          {/* Subtitle - Always Gray */}
+          {/* grey subtitle */}
           <p className="text-lg text-gray-300 mt-2">
             CS @ UofG
           </p>
 
-          {/* Social Links - Now Always White */}
+          {/* white social links*/}
           <div className="mt-6 flex justify-center space-x-6">
             <a href="https://github.com/jerryyou04" target="_blank" rel="noopener noreferrer" className="flex items-center gap-2 text-white hover:text-gray-300 transition">
               <FaGithub size={24} /> GitHub
