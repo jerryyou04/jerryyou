@@ -1,6 +1,6 @@
 import { useState } from "react";
 import AuroraBackground from "./AuroraBackground";
-import { FaGithub, FaLinkedin, FaSun, FaMoon } from "react-icons/fa";
+import { FaGithub, FaLinkedin, FaSun, FaMoon, FaRegFileAlt } from "react-icons/fa";
 
 export default function App() {
   const [darkMode, setDarkMode] = useState(true);
@@ -33,15 +33,15 @@ export default function App() {
           </p>
 
           {/* white social links*/}
-          <div className="mt-6 flex justify-center space-x-6">
+          <div className="mt-6 flex justify-center space-x-12 flex-nowrap">
             <a href="https://github.com/jerryyou04" target="_blank" rel="noopener noreferrer" className="flex items-center gap-2 text-white hover:text-gray-300 transition">
               <FaGithub size={24} /> GitHub
             </a>
             <a href="https://linkedin.com/in/jerryyou04" target="_blank" rel="noopener noreferrer" className="flex items-center gap-2 text-white hover:text-gray-300 no-underline transition">
               <FaLinkedin size={24} /> LinkedIn
             </a>
-            <a href="/resume.html" target="_blank" rel="noopener noreferrer" className="text-white hover:text-gray-300 transition">
-              📄 Resume
+            <a href="/resume.html" target="_blank" rel="noopener noreferrer" className="flex items-center gap-2 text-white hover:text-gray-300 transition">
+              <FaRegFileAlt size={24} /> Resume
             </a>
           </div>
         </div>
