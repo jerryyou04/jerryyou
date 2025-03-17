@@ -9,19 +9,26 @@ export default function App() {
     <div className={darkMode ? "dark" : ""}>
       <AuroraBackground darkMode={darkMode}>
         {/* dark mode toggle */}
-        <button
-          onClick={() => setDarkMode(!darkMode)}
-          className="group absolute top-6 right-6 p-3 rounded-full bg-gray-700 hover:bg-gray-600 transition outline-none focus:outline-none focus-visible:ring-0 active:ring-0 select-none"
-        >
-          {darkMode ? (
-            <FaSun className="text-white group-hover:text-yellow-300 transition" size={20} />
-          ) : (
-            <FaMoon className="text-gray-400 group-hover:text-blue-400 transition" size={20} />
-          )}
-        </button>
+        <div className="absolute top-6 right-6 flex space-x-2">
+          {/* sun button*/}
+          <button
+            onClick={() => setDarkMode(false)}
+            className={`group p-3 rounded-full bg-gray-700 hover:bg-gray-600 transition outline-none focus:outline-none focus-visible:ring-0 active:ring-0 select-none 
+              ${darkMode ? "opacity-50" : "opacity-100"}`}
+          >
+            <FaSun className="text-white transition group-hover:text-yellow-300" size={20} />
+          </button>
 
-
-
+          {/* moon button */}
+          <button
+            onClick={() => setDarkMode(true)}
+            className={`group p-3 rounded-full bg-gray-700 hover:bg-gray-600 transition outline-none focus:outline-none focus-visible:ring-0 active:ring-0 select-none 
+              ${darkMode ? "opacity-100" : "opacity-50"}`}
+          >
+            <FaMoon className="text-gray-400 transition group-hover:text-blue-400" size={20} />
+          </button>
+        </div>
+        
         <div className="text-center">
           {/* title white*/}
           <h1 className="text-5xl font-bold text-white drop-shadow-lg">
