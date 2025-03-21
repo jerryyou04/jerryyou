@@ -6,21 +6,21 @@ export default function AuroraBackground({ children, darkMode }) {
           {/* dark mode*/}
           {darkMode && (
             <>
-              {/* Deep Space Gradient with a Slight Purple Hue */}
+              {/* space gradient with purple hue */}
               <div className="absolute top-[-50%] left-[-50%] h-[220vh] w-[220vw] bg-gradient-to-br from-black via-blue-950 to-indigo-900 opacity-70 blur-[220px] animate-pulse"></div>
 
-              {/* Subtle Secondary Glow (Aurora Effect) */}
+              {/* secondary glow */}
               <div className="absolute bottom-[-30%] right-[-30%] h-[140vh] w-[140vw] bg-gradient-to-bl from-indigo-800 via-cyan-700 to-black opacity-50 blur-[180px] animate-slow-spin"></div>
 
-              {/* ✨ Stars Layer */}
+              {/* stars layer */}
               <div className="absolute inset-0 pointer-events-none">
                 {[...Array(100)].map((_, i) => (
                   <div
                     key={i}
                     className="absolute bg-white rounded-full"
-                    style={{
-                      width: `${Math.random() * 4.5}px`,
-                      height: `${Math.random() * 4.5}px`,
+                    style={{ // animations for stars randomly twinkling
+                      width: `${Math.random() * 4.0}px`,
+                      height: `${Math.random() * 4.0}px`,
                       top: `${Math.random() * 100}%`,
                       left: `${Math.random() * 100}%`,
                       opacity: Math.random() * 0.8 + 0.2, // opacity
@@ -43,7 +43,7 @@ export default function AuroraBackground({ children, darkMode }) {
                 {[...Array(50)].map((_, i) => (
                   <div
                     key={i}
-                    className="absolute bg-white rounded-full"
+                    className="absolute bg-white rounded-full" // snow falling effect
                     style={{
                       width: `${2 + Math.random() * 3}px`, // Random small snowflakes
                       height: `${2 + Math.random() * 3}px`,
