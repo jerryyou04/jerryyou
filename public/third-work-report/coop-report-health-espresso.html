@@ -1,0 +1,690 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Jerry You — Co-op Report</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Open Sans', sans-serif;
+            background: linear-gradient(180deg, #F3F7FA 0%, #E7EEF3 100%);
+            color: #111;
+            line-height: 1.6;
+            min-height: 100vh;
+        }
+
+        /* Sticky Header */
+        header {
+            position: sticky;
+            top: 0;
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+            padding: 1rem 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
+            z-index: 100;
+        }
+
+        .header-title {
+            font-weight: 600;
+            font-size: 1.1rem;
+        }
+
+        nav a {
+            color: #5B4AA5;
+            text-decoration: none;
+            margin-left: 1.5rem;
+            position: relative;
+            transition: all 0.3s ease;
+        }
+
+        nav a:hover::after {
+            content: '';
+            position: absolute;
+            bottom: -3px;
+            left: 0;
+            right: 0;
+            height: 2px;
+            background: #5B4AA5;
+        }
+
+        /* Container */
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 2rem;
+        }
+
+        /* Hero Section */
+        .hero {
+            text-align: center;
+            padding: 4rem 0 3rem;
+        }
+
+        .hero-headline {
+            font-size: 3.5rem;
+            font-weight: 700;
+            line-height: 1.2;
+            margin-bottom: 1.5rem;
+        }
+
+        .hero-line-1 {
+            color: #60B24A;
+        }
+
+        .hero-line-2 {
+            color: #5B4AA5;
+        }
+
+        .hero-line-3 {
+            color: #111;
+        }
+
+        .hero-subline {
+            font-size: 1.1rem;
+            color: #666;
+            margin-bottom: 2rem;
+        }
+
+        /* Chips */
+        .chips {
+            display: flex;
+            gap: 1rem;
+            justify-content: center;
+            flex-wrap: wrap;
+            margin-bottom: 3rem;
+        }
+
+        .chip {
+            background: white;
+            padding: 0.5rem 1.2rem;
+            border-radius: 20px;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+            font-size: 0.9rem;
+            color: #444;
+        }
+
+        /* Hero Visual */
+        .hero-visual {
+            margin: 3rem auto;
+            max-width: 600px;
+        }
+
+        .diagram {
+            background: white;
+            border-radius: 12px;
+            padding: 2rem;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+        }
+
+        .hub-spoke {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+            height: 200px;
+        }
+
+        .hub {
+            background: #60B24A;
+            color: white;
+            padding: 1rem 1.5rem;
+            border-radius: 50px;
+            font-weight: 600;
+            z-index: 2;
+        }
+
+        .spoke {
+            position: absolute;
+            background: rgba(91, 74, 165, 0.1);
+            padding: 0.5rem 1rem;
+            border-radius: 8px;
+            font-size: 0.85rem;
+            color: #5B4AA5;
+            border: 1px solid rgba(91, 74, 165, 0.2);
+        }
+
+        .spoke::before {
+            content: '';
+            position: absolute;
+            width: 1px;
+            background: rgba(91, 74, 165, 0.3);
+            z-index: -1;
+        }
+
+        .spoke-1 {
+            top: 10px;
+            left: 50%;
+            transform: translateX(-50%);
+        }
+
+        .spoke-1::before {
+            height: 60px;
+            bottom: -60px;
+            left: 50%;
+        }
+
+        .spoke-2 {
+            right: 20px;
+            top: 50%;
+            transform: translateY(-50%);
+        }
+
+        .spoke-2::before {
+            width: 80px;
+            right: 80px;
+            top: 50%;
+            height: 1px;
+        }
+
+        .spoke-3 {
+            bottom: 10px;
+            left: 50%;
+            transform: translateX(-50%);
+        }
+
+        .spoke-3::before {
+            height: 60px;
+            top: -60px;
+            left: 50%;
+        }
+
+        .spoke-4 {
+            left: 20px;
+            top: 50%;
+            transform: translateY(-50%);
+        }
+
+        .spoke-4::before {
+            width: 80px;
+            left: 80px;
+            top: 50%;
+            height: 1px;
+        }
+
+        .spoke-5 {
+            top: 30px;
+            right: 80px;
+        }
+
+        .spoke-5::before {
+            width: 60px;
+            height: 60px;
+            border: 1px solid rgba(91, 74, 165, 0.3);
+            border-top: none;
+            border-right: none;
+            transform: rotate(45deg);
+            background: none;
+            top: 20px;
+            left: -30px;
+        }
+
+        /* Sections */
+        section {
+            margin-bottom: 3rem;
+        }
+
+        .section-title {
+            font-size: 2rem;
+            font-weight: 600;
+            color: #60B24A;
+            margin-bottom: 1.5rem;
+        }
+
+        .section-content {
+            background: white;
+            padding: 2rem;
+            border-radius: 12px;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+        }
+
+        /* Goals Table */
+        .goals-table {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 1rem;
+            margin-top: 1rem;
+        }
+
+        .goal-header {
+            font-weight: 600;
+            color: #5B4AA5;
+            padding-bottom: 0.5rem;
+            border-bottom: 2px solid #E7EEF3;
+            margin-bottom: 1rem;
+        }
+
+        .goal-item {
+            padding: 1rem;
+            background: #F3F7FA;
+            border-radius: 8px;
+            margin-bottom: 0.5rem;
+        }
+
+        .goal-title {
+            font-weight: 600;
+            color: #60B24A;
+            margin-bottom: 0.5rem;
+        }
+
+        /* Project Cards */
+        .projects-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 1.5rem;
+            margin-top: 1.5rem;
+        }
+
+        .project-card {
+            background: white;
+            border-radius: 12px;
+            padding: 1.5rem;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+            transition: transform 0.3s ease;
+        }
+
+        .project-card:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.12);
+        }
+
+        .project-title {
+            font-size: 1.2rem;
+            font-weight: 600;
+            color: #5B4AA5;
+            margin-bottom: 0.5rem;
+        }
+
+        .stack-chips {
+            display: flex;
+            gap: 0.5rem;
+            flex-wrap: wrap;
+            margin: 1rem 0;
+        }
+
+        .stack-chip {
+            background: rgba(96, 178, 74, 0.1);
+            color: #60B24A;
+            padding: 0.2rem 0.6rem;
+            border-radius: 12px;
+            font-size: 0.8rem;
+            font-weight: 500;
+        }
+
+        .impact-list {
+            list-style: none;
+            padding-left: 0;
+        }
+
+        .impact-list li {
+            position: relative;
+            padding-left: 1.5rem;
+            margin-bottom: 0.5rem;
+            color: #444;
+        }
+
+        .impact-list li::before {
+            content: '→';
+            position: absolute;
+            left: 0;
+            color: #60B24A;
+            font-weight: 600;
+        }
+
+        /* Pull Quote */
+        .pull-quote {
+            background: linear-gradient(135deg, rgba(96, 178, 74, 0.05), rgba(91, 74, 165, 0.05));
+            border-left: 4px solid #60B24A;
+            padding: 1.5rem;
+            margin: 2rem 0;
+            border-radius: 8px;
+            font-style: italic;
+            font-size: 1.1rem;
+            color: #444;
+        }
+
+        /* Measures */
+        .measures {
+            background: #F3F7FA;
+            padding: 1rem;
+            border-radius: 8px;
+            margin-top: 1.5rem;
+            font-size: 0.9rem;
+            color: #666;
+        }
+
+        /* Footer */
+        footer {
+            text-align: center;
+            padding: 3rem 2rem 2rem;
+            color: #666;
+            font-size: 0.9rem;
+        }
+
+        .contact {
+            margin-bottom: 1rem;
+        }
+
+        .disclaimer {
+            font-size: 0.8rem;
+            color: #999;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .hero-headline {
+                font-size: 2.5rem;
+            }
+
+            .goals-table {
+                grid-template-columns: 1fr;
+            }
+
+            nav a {
+                margin-left: 0.8rem;
+                font-size: 0.9rem;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <!-- Sticky Header -->
+    <header>
+        <div class="header-title">Jerry You — Co-op Report</div>
+        <nav>
+            <a href="#intro">Intro</a>
+            <a href="#employer">Employer</a>
+            <a href="#goals">Goals</a>
+            <a href="#projects">Projects</a>
+            <a href="#reflection">Reflection</a>
+            <a href="#conclusion">Conclusion</a>
+            <a href="#thanks">Thanks</a>
+        </nav>
+    </header>
+
+    <div class="container">
+        <!-- Hero Section -->
+        <div class="hero">
+            <div class="hero-headline">
+                <div class="hero-line-2">Health Espresso Co-op Report</div>
+            </div>
+            <p class="hero-subline">
+                QA Automation & SWE @ Health Espresso · 4-month co-op · Flutter/Dart · React/TS · AWS
+                Lambda/Bedrock · Git
+            </p>
+            <div class="chips">
+                <span class="chip">Software Developer Co-op</span>
+                <span class="chip">Team Size: ~16</span>
+                <span class="chip">May–Aug 2025</span>
+                <span class="chip">10+ PRs Merged</span>
+                <span class="chip">3 Features Shipped</span>
+                <span class="chip">LLM JSON Pipeline</span>
+            </div>
+
+            <!-- Hero Visual -->
+            <div class="hero-visual">
+                <div class="diagram">
+                    <div class="hub-spoke">
+                        <div class="hub">Patient Summary</div>
+                        <div class="spoke spoke-1">Upload UI</div>
+                        <div class="spoke spoke-2">Lambda</div>
+                        <div class="spoke spoke-3">Post-processing</div>
+                        <div class="spoke spoke-4">App</div>
+                        <div class="spoke spoke-5">Titan</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Section 1: Introduction -->
+        <section id="intro">
+            <h2 class="section-title">Abstract/Introduction</h2>
+            <div class="section-content">
+                <p>
+                    During my 4-month co-op at Health Espresso from May to August 2025,
+                    I had the chance to work in full-stack development, including my initial role in QA automation.
+                    I worked on features that made it to production, ranging from Flutter mobile apps to React web
+                    interfaces and AWS serverless setups.
+                    In the startup,
+                    I built three features: a profile editing tool in Flutter,
+                    a patient summary upload drawer in React with TypeScript combined with AWS Bedrock summarizing it,
+                    and Python Automated QA tests with Selenium.
+                    The experience taught me how to handle changing priorities in a messy startup space, write code to
+                    handle LLMs in bedrock,
+                    and deliver value when instructions aren't clear.
+                </p>
+            </div>
+        </section>
+
+        <!-- Section 2: Employer -->
+        <section id="employer">
+            <h2 class="section-title">The Employer</h2>
+            <div class="section-content">
+                <p>
+                    Health Espresso is a Canadian health technology startup based in Oakville, Ontario, although it is
+                    WFH.
+                    The company provides a health care platform designed around the principle of “One Patient, One
+                    Record, One Care Plan.”
+                    Its products include an electronic medical record system, patient engagement apps, secure messaging
+                    and video conferencing, remote monitoring tools,
+                    and automation features to reduce administrative work.
+
+                    The company is small, with a team of about 16 employees.
+                </p>
+                <div style="display:flex; gap:1rem; flex-wrap:wrap; justify-content:center; margin-top:1.5rem;">
+                    <img src="portal.png" alt="Health Espresso Portal" style="max-width:900px; border-radius:8px;">
+                    <img src="slack.png" alt="Slack Communication" style="max-width:900px; border-radius:8px;">
+                    <img src="git.png" alt="Git Workflow" style="max-width:900px; border-radius:8px;">
+                </div>
+            </div>
+        </section>
+
+        <!-- Section 3: Goals → Outcomes -->
+        <section id="goals">
+            <h2 class="section-title">Goals → Outcomes</h2>
+            <div class="section-content">
+                <div class="goals-table">
+                    <div>
+                        <div class="goal-header">Goal</div>
+
+                        <div class="goal-item">
+                            <div class="goal-title">Technological Literacy — Automated Testing</div>
+                            <p>Learn how to use automated testing tools like Selenium in a real workplace setting, and
+                                build QA automation skills.</p>
+                        </div>
+
+                        <div class="goal-item">
+                            <div class="goal-title">Critical & Creative Thinking — Explore Development</div>
+                            <p>Explore new areas of development beyond QA, such as mobile, frontend, and backend tasks.
+                            </p>
+                        </div>
+
+                        <div class="goal-item">
+                            <div class="goal-title">Communicating — Technical Communication</div>
+                            <p>Improve technical communication by participating in demo sessions and adjusting
+                                language for the audience depending on who it is.</p>
+                        </div>
+
+                        <div class="goal-item">
+                            <div class="goal-title">Information Literacy — Navigating Ambiguity</div>
+                            <p>Learn how to adapt to a fast-paced or unclear environment by tracking tasks and
+                                clarifying priorities when vague.</p>
+                        </div>
+
+                        <div class="goal-item">
+                            <div class="goal-title">Personal Goal — Career Direction</div>
+                            <p>Decide whether I want to continue with QA work or focus more on software development.</p>
+                        </div>
+                    </div>
+
+                    <div>
+                        <div class="goal-header">Outcome</div>
+
+                        <div class="goal-item">
+                            <div class="goal-title">✓ Partial Progress</div>
+                            <p>Set up the environment and experimented with Selenium. Full
+                                integration wasn’t reached, but I learned more about automation.</p>
+                        </div>
+
+                        <div class="goal-item">
+                            <div class="goal-title">✓ Exceeded</div>
+                            <p>Contributed well beyond QA: shipped Flutter profile editing, a React upload drawer, and
+                                an AWS Lambda + Bedrock pipeline. </p>
+                        </div>
+
+                        <div class="goal-item">
+                            <div class="goal-title">✓ Achieved</div>
+                            <p>Led demos. Wrote clearer documentation and PR descriptions.
+                                Feedback in daily meetings confirmed my communication helped teammates understand
+                                progress
+                                and struggles.
+                            </p>
+                        </div>
+
+                        <div class="goal-item">
+                            <div class="goal-title">✓ Achieved</div>
+                            <p>Kept a running task log and regularly compared plans to shifting priorities. When
+                                instructions were vague, I clarified assumptions in Slack
+                                and communicated progress so decisions were documented.
+                                This let me finish tasks on time even when scope or direction changed last minute.</p>
+                        </div>
+
+                        <div class="goal-item">
+                            <div class="goal-title">✓ Decision Made</div>
+                            <p>Realized I prefer software development over
+                                pure QA. Still value QA, but see it as a supporting skill, not my main focus.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="measures">
+                    <strong>Measures:</strong>
+                    Built and ran working automated tests for multiple features,
+                    explored stacks beyond QA with multiple tasks and
+                    delivered 3 user-facing features (Flutter, React, AWS),
+                    led demos that teammates understood and gave positive feedback on,
+                    stayed productive despite shifting priorities,
+                    and clarified my career direction toward software development.
+                </div>
+
+            </div>
+        </section>
+
+
+        <!-- Section 4: Job Description -->
+        <section id="job">
+            <h2 class="section-title">Job Description</h2>
+            <div class="section-content">
+                <p>
+                    At Health Espresso, my role expanded from QA automation into full-stack software development, where
+                    I contributed to multiple production features and workflow improvements:
+                </p>
+
+                <h3 class="project-title">Flutter Profile & Patient Info Editing</h3>
+                <p>
+                    I built an editable profile flow in the company’s mobile app using Flutter with BLoC state
+                    management.
+                    The feature included live validation for fields such as name, phone number, address, and gender.
+                    I also implemented reset logic to prevent data loss on navigation, added contextual snackbar
+                    feedback,
+                    and handled translation support for multi-language users.
+                </p>
+
+                <h3 class="project-title">React/TypeScript Patient Summary Upload Drawer</h3>
+                <p>
+                    On the web platform, I developed a file upload drawer for patient summaries using React and Redux
+                    Toolkit.
+                    This included PDF/image validation, duplicate-upload prevention, error boundaries for graceful
+                    failure,
+                    and safe state handling. I also resolved complex merge conflicts across feature branches and
+                    documented
+                    the drawer’s behavior for teammates.
+                </p>
+
+                <h3 class="project-title">AWS Lambda + Bedrock Structured Data Extraction</h3>
+                <p>
+                    I designed and deployed an AWS Lambda pipeline that called Amazon Bedrock’s Titan model to extract
+                    structured data
+                    from uploaded patient summaries. To make it production-ready, I built a regex sanitizer to strip
+                    unwanted formatting,
+                    schema validation to reject malformed responses, and retry logic with exponential backoff.
+                    This turned unpredictable model output into clean, consumable JSON for downstream services.
+                </p>
+
+                <h3 class="project-title">QA Automation & Development Workflow Improvements</h3>
+                <p>
+                    I contributed Selenium smoke tests for core user flows, built PR templates that improved review
+                    turnaround times by ~60%,
+                    and standardized Git workflows. By reducing PR size and improving commit practices, I helped speed
+                    up the development cycle
+                    and reduce merge conflicts.
+                </p>
+
+                <h3 class="section-subtitle">Technologies Used</h3>
+                <ul class="impact-list">
+                    <li><strong>Flutter Project:</strong> Dart, Flutter, BLoC</li>
+                    <li><strong>Web Project:</strong> React, TypeScript, Redux Toolkit</li>
+                    <li><strong>Backend Project:</strong> AWS Lambda, Amazon Bedrock Titan, JSON Processing, Regex,
+                        CI/CD</li>
+                    <li><strong>QA/Workflow:</strong> Selenium, Git/GitHub, E2E Testing</li>
+                </ul>
+                <div style="display:flex; gap:1rem; flex-wrap:wrap; justify-content:center; margin-top:1rem;">
+                    <img src="flutter.png" alt="Flutter Logo" style="max-width:550px; border-radius:8px;">
+                    <img src="python.png" alt="Python Logo" style="max-width:550px; border-radius:8px;">
+                    <img src="aws.png" alt="AWS Logo" style="max-width:550px; border-radius:8px;">
+                </div>
+            </div>
+        </section>
+
+
+        <!-- Section 6: Conclusion -->
+        <section id="conclusion">
+            <h2 class="section-title">Conclusion</h2>
+            <div class="section-content">
+                <p>
+                    Overall, my work term at Health Espresso was an enriching experience that allowed me to grow both
+                    technically and professionally. I successfully completed 3-4 challenging projects, enhanced my
+                    problem-solving abilities, and gained valuable experience into the startup space. The skills and
+                    experiences from this term will definitely benefit my future goals in QA and
+                    software development.
+                </p>
+            </div>
+        </section>
+
+        <!-- Section 7: Acknowledgments -->
+        <section id="thanks">
+            <h2 class="section-title">Acknowledgments</h2>
+            <div class="section-content">
+                <p>
+                    Thanks to Omar for Flutter guidance, Jarnell for onboarding us onto QA, AJ for AWS/Lambda
+                    reviews,
+                    Hussain (The other co-op student) for working alongside me and making it an amazing experience, and
+                    Amy
+                    for creating a good environment for us to be able to learn and grow professionally.
+
+                    Lastly, thank you to the entire Health Espresso team for making it an amazing learning experience.
+                </p>
+            </div>
+        </section>
+    </div>
+
+    <!-- Footer -->
+    <footer>
+        <div class="Footer">
+            <strong>HealthEspresso Co-op Report May-Aug 2025</strong>
+        </div>
+    </footer>
+</body>
+
+</html>
