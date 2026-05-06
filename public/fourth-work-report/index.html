@@ -1,0 +1,411 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Jerry You - Fourth Co-op Work Term Report</title>
+    <style>
+        :root {
+            --green: #008a00;
+            --ink: #162019;
+            --muted: #5d685f;
+            --line: #d9e2dc;
+            --soft: #f5f8f6;
+            --white: #ffffff;
+        }
+
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            margin: 0;
+            font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+            color: var(--ink);
+            background: var(--soft);
+            line-height: 1.62;
+        }
+
+        header {
+            background: var(--white);
+            border-bottom: 1px solid var(--line);
+        }
+
+        .wrap {
+            width: min(960px, calc(100% - 32px));
+            margin: 0 auto;
+        }
+
+        .hero {
+            padding: 42px 0 30px;
+        }
+
+        .eyebrow {
+            margin: 0 0 10px;
+            color: var(--green);
+            font-size: 0.82rem;
+            font-weight: 700;
+            letter-spacing: 0.08em;
+            text-transform: uppercase;
+        }
+
+        h1 {
+            margin: 0;
+            max-width: 780px;
+            font-size: clamp(2.1rem, 6vw, 4.2rem);
+            line-height: 1.04;
+            letter-spacing: 0;
+        }
+
+        .subtitle {
+            max-width: 760px;
+            margin: 18px 0 0;
+            color: var(--muted);
+            font-size: 1.05rem;
+        }
+
+        nav {
+            display: flex;
+            gap: 16px;
+            flex-wrap: wrap;
+            padding: 14px 0;
+            border-top: 1px solid var(--line);
+        }
+
+        nav a {
+            color: var(--ink);
+            text-decoration: none;
+            font-size: 0.92rem;
+            font-weight: 600;
+        }
+
+        nav a:hover {
+            color: var(--green);
+        }
+
+        main {
+            padding: 28px 0 44px;
+        }
+
+        section {
+            background: var(--white);
+            border: 1px solid var(--line);
+            border-radius: 8px;
+            padding: 24px;
+            margin-bottom: 18px;
+        }
+
+        h2 {
+            margin: 0 0 12px;
+            font-size: 1.35rem;
+            line-height: 1.2;
+        }
+
+        h3 {
+            margin: 18px 0 6px;
+            font-size: 1rem;
+        }
+
+        p {
+            margin: 0 0 12px;
+        }
+
+        p:last-child {
+            margin-bottom: 0;
+        }
+
+        ul {
+            margin: 10px 0 0;
+            padding-left: 20px;
+        }
+
+        li {
+            margin-bottom: 8px;
+        }
+
+        code {
+            background: var(--soft);
+            border: 1px solid var(--line);
+            border-radius: 4px;
+            padding: 1px 5px;
+            font-size: 0.92em;
+        }
+
+        .goal {
+            padding-top: 14px;
+            border-top: 1px solid var(--line);
+            margin-top: 16px;
+        }
+
+        .image-row {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 12px;
+            margin-top: 16px;
+        }
+
+        .photo-card {
+            border: 1px solid var(--line);
+            border-radius: 8px;
+            background: #fbfdfb;
+            display: flex;
+            flex-direction: column;
+            overflow: hidden;
+        }
+
+        .photo-card img {
+            display: block;
+            width: 100%;
+            height: auto;
+            max-height: 430px;
+            object-fit: contain;
+            background: #eef3ef;
+        }
+
+        .photo-card figcaption {
+            padding: 10px 12px;
+            color: var(--muted);
+            text-align: center;
+            font-size: 0.9rem;
+        }
+
+        footer {
+            color: var(--muted);
+            text-align: center;
+            padding: 0 0 34px;
+            font-size: 0.9rem;
+        }
+
+        @media (max-width: 760px) {
+            section {
+                padding: 20px;
+            }
+
+            .image-row {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <div class="wrap hero">
+            <p class="eyebrow">Bachelor of Computing - Computer Science Co-op</p>
+            <h1>Fourth Co-op Work Term Report</h1>
+            <p class="subtitle">
+                Software Developer Intern at TD Bank, Toronto - Winter 2026. Enterprise Governance, Risk, and
+                Compliance, based out of TD Terrace.
+            </p>
+        </div>
+        <nav class="wrap">
+            <a href="#intro">Introduction</a>
+            <a href="#employer">Employer</a>
+            <a href="#goals">Goals</a>
+            <a href="#job">Job</a>
+            <a href="#reflection">Reflection</a>
+            <a href="#conclusion">Conclusion</a>
+            <a href="#thanks">Thanks</a>
+        </nav>
+    </header>
+
+    <main class="wrap">
+        <section id="intro">
+            <h2>Abstract / Introduction</h2>
+            <p>
+                For my Winter 2026 co-op term, I worked as a Software Developer Intern at TD Bank on the Enterprise
+                Governance, Risk, and Compliance (eGRC) team.
+            </p>
+            <p>
+                Most of my work sat in a part of software that is rarely highlighted in school: testing existing logic,
+                debugging edge cases, moving data reliably, and building reporting systems that make internal activity
+                visible.
+            </p>
+            <p>
+                The main takeaway from this term is that real-world systems are not clean or ideal. The valuable skill
+                is learning how to work within that reality: understanding messy systems, validating assumptions, and
+                improving things without breaking everything else.
+            </p>
+        </section>
+
+        <section id="employer">
+            <h2>About the Employer</h2>
+            <p>
+                TD Bank is one of Canada's largest financial institutions, with operations across banking, investing,
+                insurance, and internal technology systems. During the term, I worked from TD Terrace in Toronto.
+            </p>
+            <p>
+                My role focused on internal software rather than customer-facing products. Specifically, I worked within
+                an eGRC environment where systems support governance workflows, compliance tracking, and reporting. In
+                this context, even small logic issues can have real downstream effects, which made reliability and
+                testing especially important.
+            </p>
+            <div class="image-row">
+                <figure class="photo-card">
+                    <img src="/fourth-work-report/TdTerrace.jpg" width="960" height="1280"
+                        alt="TD Terrace building">
+                    <figcaption>TD Terrace, where I worked during the term.</figcaption>
+                </figure>
+                <figure class="photo-card">
+                    <img src="/fourth-work-report/ServiceNow.jpeg" width="1024" height="559"
+                        alt="ServiceNow platform logo">
+                    <figcaption>ServiceNow was the main platform behind much of my testing work.</figcaption>
+                </figure>
+            </div>
+        </section>
+
+        <section id="goals">
+            <h2>Learning Goals</h2>
+            <div class="goal">
+                <h3>Goal 1 - Technological Literacy</h3>
+                <p><strong>Goal:</strong> Develop hands-on experience with enterprise-level systems and internal tools.</p>
+                <p>
+                    <strong>Reflection:</strong> This goal was strongly achieved. I worked extensively with ServiceNow,
+                    REST APIs, SQL Server, and Power BI, but more importantly, I learned how these tools actually
+                    interact in a production environment.
+                </p>
+                <p>
+                    Unlike school projects where systems are built from scratch and are relatively clean, I worked with
+                    existing codebases that required understanding assumptions, dependencies, and historical decisions.
+                    Writing Jest tests for ServiceNow scripts forced me to break down logic into testable pieces and
+                    simulate platform behavior using mocks, such as <code>GlideRecord</code>.
+                </p>
+                <p>
+                    I also contributed to a data pipeline that extracted ServiceNow data into SQL Server and fed Power
+                    BI dashboards. Overall, I did not master every tool, but I became significantly better at navigating
+                    unfamiliar systems and figuring out how things actually work.
+                </p>
+            </div>
+
+            <div class="goal">
+                <h3>Goal 2 - Oral Communication</h3>
+                <p><strong>Goal:</strong> Improve professional communication in a technical environment.</p>
+                <p>
+                    <strong>Reflection:</strong> This goal was moderately achieved. I participated in team meetings,
+                    provided updates on progress, and documented my work through tickets and internal notes.
+                </p>
+                <p>
+                    The main challenge was learning how to communicate clearly when the system itself was unclear.
+                    Explaining bugs, edge cases, or unexpected behavior required not just describing what happened, but
+                    also what assumptions might be wrong.
+                </p>
+                <p>
+                    Over time, I improved at giving concise updates and focusing on what actually mattered: blockers,
+                    risks, and next steps, instead of over-explaining technical details. While I still have room to
+                    improve, I became more comfortable communicating in a professional development environment.
+                </p>
+            </div>
+
+            <div class="goal">
+                <h3>Goal 3 - Personal Learning Goal: Time Management and Accountability</h3>
+                <p><strong>Goal:</strong> Improve independence, time management, and ownership of tasks.</p>
+                <p>
+                    <strong>Reflection:</strong> This goal was achieved. Much of my work required independently
+                    exploring unfamiliar code, debugging issues, and writing tests without step-by-step instructions.
+                </p>
+                <p>
+                    To manage this, I broke tasks into smaller steps, tested assumptions early, and tracked progress
+                    through tickets. One of the biggest improvements was learning when to stop guessing and instead
+                    validate something with a test or data check.
+                </p>
+                <p>
+                    I consistently met deadlines and required minimal revisions after code review, which indicates that
+                    I became more reliable in both execution and decision-making. This experience helped reinforce the
+                    importance of accountability in a real-world engineering setting.
+                </p>
+            </div>
+        </section>
+
+        <section id="job">
+            <h2>Job Description</h2>
+            <p>
+                My work focused on testing infrastructure, debugging legacy logic, and building data pipelines and
+                dashboards.
+            </p>
+            <h3>Testing ServiceNow Logic</h3>
+            <p>
+                I wrote Jest tests for ServiceNow scripts and business rules. Since ServiceNow does not run natively in
+                a local environment, I worked with mocked implementations of platform APIs such as
+                <code>GlideRecord</code> and <code>gs</code>. This allowed for repeatable testing and better validation
+                of logic.
+            </p>
+            <h3>Debugging Legacy Scripts</h3>
+            <p>
+                A large part of the work involved identifying fragile logic, such as type coercion issues, incorrect
+                assumptions about data structure, and edge cases that were not originally considered. This required
+                careful reading, testing, and verification.
+            </p>
+            <h3>Data Pipeline and Reporting</h3>
+            <p>
+                I worked with REST APIs to extract ServiceNow data, store it in SQL Server, and build Power BI
+                dashboards. One focus was tracking developer activity through update set metrics, which helped provide
+                visibility into internal engineering work.
+            </p>
+            <h3>Key Technologies</h3>
+            <ul>
+                <li><strong>Testing:</strong> Jest, mocked ServiceNow APIs.</li>
+                <li><strong>Data:</strong> REST APIs, SQL Server.</li>
+                <li><strong>Reporting:</strong> Power BI.</li>
+            </ul>
+        </section>
+
+        <section id="reflection">
+            <h2>Reflection</h2>
+            <p>
+                The most important lesson from this term is that real-world software is uneven. Some parts are
+                well-designed and stable, while others rely on assumptions that are not immediately visible.
+            </p>
+            <p>
+                Technical debt is not always obvious. It often appears as small inconsistencies: a field that is usually
+                one type but not always, or logic that only works because of specific input patterns. Companies operate
+                within these constraints because rewriting everything is not practical.
+            </p>
+            <p>
+                This changed how I approach engineering. Instead of assuming code is correct, I learned to verify
+                behavior through testing and data inspection. I also became more comfortable working in systems where
+                documentation is incomplete and clarity has to be built manually.
+            </p>
+            <p>
+                One of the more valuable realizations was that "working" code is not the same as correct code. That
+                distinction becomes important in environments where small errors can affect reporting or workflows
+                without being immediately visible.
+            </p>
+            <p>
+                Overall, I improved my ability to reason through unclear systems, debug effectively, and make
+                incremental improvements in a complex environment.
+            </p>
+        </section>
+
+        <section id="conclusion">
+            <h2>Conclusion</h2>
+            <p>
+                This work term was not just about learning specific technologies like Jest, ServiceNow, SQL Server, or
+                Power BI. It was about understanding how software behaves inside a large organization.
+            </p>
+            <p>
+                If someone were to summarize this experience, I would want them to say that I learned how to work with
+                real systems, not ideal ones, and how to make them slightly more reliable and understandable.
+            </p>
+            <p>
+                I left the term more confident in my technical ability, but also with a more realistic view of how
+                software development works in practice.
+            </p>
+        </section>
+
+        <section id="thanks">
+            <h2>Acknowledgments</h2>
+            <p>
+                I would like to thank my managers, Bill Qian and Meenal Warang, as well as my team at TD Bank, for their
+                guidance, feedback, and support throughout the term. I also appreciate the University of Guelph co-op
+                program for providing the opportunity to gain this experience.
+            </p>
+        </section>
+    </main>
+
+    <footer>
+        Jerry You - Software Developer Intern, TD Bank - Winter 2026
+    </footer>
+</body>
+
+</html>
