@@ -1,10 +1,42 @@
 <!doctype html>
-<html lang="en">
+<html lang="en" data-theme="dark">
   <head>
     <meta charset="UTF-8" />
-    <link rel="icon" type="image/jpeg" href="/favicon.png" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Jerry's portfolio</title>
+    <meta name="theme-color" content="#08090b" />
+    <meta
+      name="description"
+      content="Computer Science student at the University of Guelph. Portfolio of work experience and selected projects."
+    />
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://jerryyou.com/" />
+    <meta property="og:site_name" content="Jerry You" />
+    <meta property="og:title" content="Jerry You" />
+    <meta
+      property="og:description"
+      content="Computer Science student at the University of Guelph. Portfolio of work experience and selected projects."
+    />
+    <meta property="og:image" content="https://jerryyou.com/favicon.png" />
+    <meta property="og:image:alt" content="Jerry You portfolio mark" />
+    <meta name="twitter:card" content="summary" />
+    <meta name="twitter:title" content="Jerry You" />
+    <meta
+      name="twitter:description"
+      content="Computer Science student at the University of Guelph. Portfolio of work experience and selected projects."
+    />
+    <link rel="canonical" href="https://jerryyou.com/" />
+    <link rel="icon" type="image/png" href="/favicon.png" />
+    <title>Jerry You</title>
+    <script>
+      try {
+        const savedTheme = localStorage.getItem("jerry-you-portfolio-theme");
+        if (savedTheme === "light" || savedTheme === "dark") {
+          document.documentElement.dataset.theme = savedTheme;
+        }
+      } catch {
+        // The portfolio defaults to dark when browser storage is unavailable.
+      }
+    </script>
   </head>
   <body>
     <div id="root"></div>
