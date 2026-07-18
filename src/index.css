@@ -1,31 +1,6 @@
 @import "tailwindcss";
 
 :root,
-html[data-theme="dark"] {
-  color-scheme: dark;
-  --page: #08090b;
-  --surface: #0d0f13;
-  --surface-raised: #11141a;
-  --surface-soft: #151820;
-  --text: #e8eaf0;
-  --text-strong: #f3f4f7;
-  --muted: #959ba7;
-  --muted-strong: #b8bdc7;
-  --border: rgba(220, 224, 234, 0.12);
-  --border-strong: rgba(220, 224, 234, 0.2);
-  --accent: #8b91ff;
-  --accent-soft: rgba(139, 145, 255, 0.12);
-  --accent-border: rgba(139, 145, 255, 0.3);
-  --header: rgba(8, 9, 11, 0.84);
-  font-family:
-    Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI",
-    sans-serif;
-  font-synthesis: none;
-  text-rendering: optimizeLegibility;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-}
-
 html[data-theme="light"] {
   color-scheme: light;
   --page: #f5f6f8;
@@ -42,6 +17,31 @@ html[data-theme="light"] {
   --accent-soft: rgba(85, 95, 214, 0.09);
   --accent-border: rgba(85, 95, 214, 0.25);
   --header: rgba(245, 246, 248, 0.86);
+  font-family:
+    Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI",
+    sans-serif;
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+html[data-theme="dark"] {
+  color-scheme: dark;
+  --page: #08090b;
+  --surface: #0d0f13;
+  --surface-raised: #11141a;
+  --surface-soft: #151820;
+  --text: #e8eaf0;
+  --text-strong: #f3f4f7;
+  --muted: #959ba7;
+  --muted-strong: #b8bdc7;
+  --border: rgba(220, 224, 234, 0.12);
+  --border-strong: rgba(220, 224, 234, 0.2);
+  --accent: #8b91ff;
+  --accent-soft: rgba(139, 145, 255, 0.12);
+  --accent-border: rgba(139, 145, 255, 0.3);
+  --header: rgba(8, 9, 11, 0.84);
 }
 
 * {
@@ -237,13 +237,13 @@ svg {
 
 .hero {
   display: flex;
-  min-height: clamp(380px, 52svh, 470px);
+  min-height: clamp(320px, 40svh, 370px);
   align-items: center;
   border-bottom: 1px solid var(--border);
 }
 
 .hero-content {
-  padding-block: 4.75rem 5rem;
+  padding-block: 3.25rem 3.5rem;
 }
 
 .hero h1 {
@@ -257,7 +257,7 @@ svg {
 }
 
 .hero-subtitle {
-  margin: 1.8rem 0 0;
+  margin: 1.6rem 0 0;
   color: var(--muted);
   font-size: 0.95rem;
 }
@@ -266,7 +266,7 @@ svg {
   display: flex;
   flex-wrap: wrap;
   gap: 0.65rem;
-  margin-top: 1.45rem;
+  margin-top: 1.2rem;
 }
 
 .social-link {
@@ -304,12 +304,12 @@ svg {
 }
 
 .page-section {
-  padding-top: clamp(5.75rem, 9vw, 7.5rem);
+  padding-top: clamp(3.75rem, 6vw, 5rem);
   scroll-margin-top: 4rem;
 }
 
 .section-heading {
-  margin-bottom: 2rem;
+  margin-bottom: 1.35rem;
 }
 
 .section-heading h2 {
@@ -329,7 +329,7 @@ svg {
     "mark meta meta";
   grid-template-columns: 56px minmax(0, 1fr) auto;
   column-gap: 1.25rem;
-  padding-block: 2.4rem;
+  padding-block: 2rem;
 }
 
 .experience-item + .experience-item {
@@ -442,7 +442,7 @@ html[data-theme="light"] .company-mark--green {
 .experience-description {
   grid-area: description;
   max-width: 760px;
-  margin: 0.85rem 0 0;
+  margin: 0.65rem 0 0;
   color: var(--muted-strong);
   font-size: 0.93rem;
   line-height: 1.72;
@@ -451,7 +451,7 @@ html[data-theme="light"] .company-mark--green {
 .experience-meta {
   grid-area: meta;
   min-width: 0;
-  margin-top: 1.15rem;
+  margin-top: 0.9rem;
 }
 
 .tag-list {
@@ -505,7 +505,7 @@ html[data-theme="light"] .company-mark--green {
   grid-template-columns: minmax(300px, 1.08fr) minmax(0, 0.92fr);
   align-items: center;
   gap: clamp(2rem, 5vw, 3.5rem);
-  padding-block: clamp(2.75rem, 6vw, 3.75rem);
+  padding-block: clamp(2rem, 4vw, 2.75rem);
 }
 
 .project-card + .project-card {
@@ -581,12 +581,12 @@ html[data-theme="light"] .company-mark--green {
 }
 
 #projects {
-  padding-bottom: clamp(6rem, 12vw, 9rem);
+  padding-bottom: clamp(3.5rem, 6vw, 5rem);
 }
 
 .site-footer {
   display: flex;
-  min-height: 6rem;
+  min-height: 5rem;
   align-items: center;
   justify-content: space-between;
   border-top: 1px solid var(--border);
@@ -687,7 +687,7 @@ html[data-theme="light"] .company-mark--green {
   }
 
   .hero-content {
-    padding-block: 5rem 4.25rem;
+    padding-block: 3.25rem 3rem;
   }
 
   .hero h1 {
@@ -695,20 +695,20 @@ html[data-theme="light"] .company-mark--green {
   }
 
   .page-section {
-    padding-top: 5.15rem;
+    padding-top: 3.75rem;
   }
 
   .section-heading {
-    margin-bottom: 1.7rem;
+    margin-bottom: 1.2rem;
   }
 
   .experience-item {
-    padding-block: 2rem;
+    padding-block: 1.65rem;
   }
 
   .project-card {
     gap: 1.5rem;
-    padding-block: 2.5rem;
+    padding-block: 2rem;
   }
 }
 

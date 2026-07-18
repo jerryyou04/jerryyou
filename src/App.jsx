@@ -35,10 +35,10 @@ function getInitialTheme() {
       return storedTheme;
     }
   } catch {
-    // Storage can be unavailable in strict privacy contexts; dark remains the default.
+    // Storage can be unavailable in strict privacy contexts; light remains the default.
   }
 
-  return "dark";
+  return "light";
 }
 
 function scrollToSection(sectionId, { moveFocus = false } = {}) {
