@@ -4,13 +4,18 @@
   "redirects": [
     {
       "source": "/resume",
-      "destination": "/resume/resume.pdf",
+      "destination": "/resume.pdf",
       "permanent": false
+    },
+    {
+      "source": "/resume/resume.pdf",
+      "destination": "/resume.pdf",
+      "permanent": true
     }
   ],
   "headers": [
     {
-      "source": "/resume/resume.pdf",
+      "source": "/resume.pdf",
       "headers": [
         {
           "key": "Cache-Control",
