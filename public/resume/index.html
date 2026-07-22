@@ -1,27 +1,51 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Resume - Jerry You</title>
-  <link rel="icon" type="image/jpeg" href="/favicon.png"> 
-  <style>
-    body {
-      margin: 0;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      height: 100vh;
-      background: #1a1a1a;
-    }
-    iframe {
-      width: 100%;
-      height: 100vh;
-      border: none;
-    }
-  </style>
-</head>
-<body>
-  <iframe src="/resume/resume.pdf"></iframe>
-</body>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="refresh" content="0; url=/resume/resume.pdf" />
+    <meta name="robots" content="noindex" />
+    <title>Opening resume - Jerry You</title>
+    <link rel="icon" type="image/png" href="/favicon.png" />
+    <style>
+      :root {
+        color-scheme: light dark;
+        font-family:
+          Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI",
+          sans-serif;
+      }
+
+      body {
+        display: grid;
+        min-height: 100vh;
+        min-height: 100dvh;
+        margin: 0;
+        place-items: center;
+        background: Canvas;
+        color: CanvasText;
+      }
+
+      main {
+        max-width: 28rem;
+        padding: 2rem;
+        text-align: center;
+      }
+
+      a {
+        color: LinkText;
+      }
+    </style>
+    <script>
+      window.location.replace("/resume/resume.pdf");
+    </script>
+  </head>
+  <body>
+    <main>
+      <p>Opening Jerry You&rsquo;s resume&hellip;</p>
+      <p>
+        <a href="/resume/resume.pdf">Open the PDF</a> if it does not open
+        automatically.
+      </p>
+    </main>
+  </body>
 </html>

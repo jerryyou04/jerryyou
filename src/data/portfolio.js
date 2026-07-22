@@ -4,7 +4,7 @@ export const siteConfig = {
   email: "mailto:jerryyou04@gmail.com",
   github: "https://github.com/jerryyou04",
   linkedin: "https://linkedin.com/in/jerryyou04",
-  resume: "/resume",
+  resume: "/resume/resume.pdf",
 };
 
 export const navigation = [

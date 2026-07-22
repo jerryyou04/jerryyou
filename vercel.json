@@ -1,15 +1,26 @@
 {
-    "cleanUrls": true,
-    "rewrites": [
-      { "source": "/resume", "destination": "/resume/index.html" }
-    ],
-    "headers": [
-      {
-        "source": "/resume/index.html",
-        "headers": [
-          { "key": "Cache-Control", "value": "public, max-age=0, must-revalidate" }
-        ]
-      }
-    ]
-  }
-  
+  "$schema": "https://openapi.vercel.sh/vercel.json",
+  "cleanUrls": true,
+  "redirects": [
+    {
+      "source": "/resume",
+      "destination": "/resume/resume.pdf",
+      "permanent": false
+    }
+  ],
+  "headers": [
+    {
+      "source": "/resume/resume.pdf",
+      "headers": [
+        {
+          "key": "Cache-Control",
+          "value": "public, max-age=0, must-revalidate"
+        },
+        {
+          "key": "Content-Disposition",
+          "value": "inline; filename=\"Jerry-You-Resume.pdf\""
+        }
+      ]
+    }
+  ]
+}

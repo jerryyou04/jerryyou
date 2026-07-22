@@ -11,4 +11,6 @@ npm run build
 npm run preview
 ```
 
-The resume and co-op work reports are served as standalone static pages from `public/`.
+The resume is served as a top-level PDF from `public/resume/` so mobile browsers
+can use their native PDF viewer. `/resume` redirects to that file in production.
+The co-op work reports are standalone static pages in `public/`.
