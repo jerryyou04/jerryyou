@@ -41,8 +41,18 @@ export const socialLinks = [
 
 export const experiences = [
   {
+    company: "Clio",
+    role: "Software Engineer Intern",
+    dates: "Incoming Fall 2026",
+    description: "Legal Software",
+    technologies: ["Ruby on Rails",
+      "Ruby",
+      "AWS"],
+    logo: { type: "image", src: "/Clio.png", alt: "Clio logo" },
+  },
+  {
     company: "TD Bank",
-    role: "Software Developer Intern",
+    role: "Software Engineer Intern",
     dates: "Jan 2026 – Aug 2026",
     description: "Enterprise Risk Technology",
     technologies: [
