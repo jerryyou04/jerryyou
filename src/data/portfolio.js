@@ -43,7 +43,7 @@ export const experiences = [
   {
     company: "Clio",
     role: "Software Engineer Intern",
-    dates: "Incoming Fall 2026",
+    dates: "Sep 2026 – Present",
     description: "Legal Practice Management Software",
     technologies: ["Ruby on Rails",
       "Ruby",
