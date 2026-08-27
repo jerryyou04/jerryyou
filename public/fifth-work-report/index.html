@@ -1,0 +1,414 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description"
+        content="Jerry You's fifth co-op work term report about software engineering at TD Bank in Summer 2026.">
+    <title>Jerry You - Fifth Co-op Work Term Report</title>
+    <style>
+        :root {
+            --green: #008a00;
+            --ink: #162019;
+            --muted: #5d685f;
+            --line: #d9e2dc;
+            --soft: #f5f8f6;
+            --white: #ffffff;
+        }
+
+        * {
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+            scroll-padding-top: 16px;
+        }
+
+        body {
+            margin: 0;
+            font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+            color: var(--ink);
+            background: var(--soft);
+            line-height: 1.62;
+        }
+
+        header {
+            background: var(--white);
+            border-bottom: 1px solid var(--line);
+        }
+
+        .wrap {
+            width: min(960px, calc(100% - 32px));
+            margin: 0 auto;
+        }
+
+        .hero {
+            padding: 42px 0 30px;
+        }
+
+        .eyebrow {
+            margin: 0 0 10px;
+            color: var(--green);
+            font-size: 0.82rem;
+            font-weight: 700;
+            letter-spacing: 0.08em;
+            text-transform: uppercase;
+        }
+
+        h1 {
+            margin: 0;
+            max-width: 780px;
+            font-size: clamp(2.1rem, 6vw, 4.2rem);
+            line-height: 1.04;
+        }
+
+        .subtitle {
+            max-width: 760px;
+            margin: 18px 0 0;
+            color: var(--muted);
+            font-size: 1.05rem;
+        }
+
+        nav {
+            display: flex;
+            gap: 16px;
+            flex-wrap: wrap;
+            padding: 14px 0;
+            border-top: 1px solid var(--line);
+        }
+
+        nav a {
+            color: var(--ink);
+            text-decoration: none;
+            font-size: 0.92rem;
+            font-weight: 600;
+        }
+
+        nav a:hover {
+            color: var(--green);
+        }
+
+        nav a:focus-visible {
+            outline: 2px solid var(--green);
+            outline-offset: 4px;
+        }
+
+        main {
+            padding: 28px 0 44px;
+        }
+
+        section {
+            background: var(--white);
+            border: 1px solid var(--line);
+            border-radius: 8px;
+            padding: 24px;
+            margin-bottom: 18px;
+        }
+
+        h2 {
+            margin: 0 0 12px;
+            font-size: 1.35rem;
+            line-height: 1.2;
+        }
+
+        h3 {
+            margin: 18px 0 6px;
+            font-size: 1rem;
+        }
+
+        p {
+            margin: 0 0 12px;
+        }
+
+        p:last-child {
+            margin-bottom: 0;
+        }
+
+        ul {
+            margin: 10px 0 0;
+            padding-left: 20px;
+        }
+
+        li {
+            margin-bottom: 8px;
+        }
+
+        .goal {
+            padding-top: 14px;
+            border-top: 1px solid var(--line);
+            margin-top: 16px;
+        }
+
+        .image-row {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            align-items: start;
+            gap: 12px;
+            margin-top: 16px;
+        }
+
+        .photo-card {
+            border: 1px solid var(--line);
+            border-radius: 8px;
+            background: #fbfdfb;
+            display: flex;
+            flex-direction: column;
+            overflow: hidden;
+        }
+
+        .photo-card img {
+            display: block;
+            width: 100%;
+            height: auto;
+            max-height: 430px;
+            object-fit: contain;
+            background: #eef3ef;
+        }
+
+        .photo-card figcaption {
+            padding: 10px 12px;
+            color: var(--muted);
+            text-align: center;
+            font-size: 0.9rem;
+        }
+
+        footer {
+            color: var(--muted);
+            text-align: center;
+            padding: 0 16px 34px;
+            font-size: 0.9rem;
+        }
+
+        @media (max-width: 760px) {
+            section {
+                padding: 20px;
+            }
+
+            .image-row {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        @media (prefers-reduced-motion: reduce) {
+            html {
+                scroll-behavior: auto;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <div class="wrap hero">
+            <p class="eyebrow">Bachelor of Computing - Computer Science Co-op</p>
+            <h1>Fifth Co-op Work Term Report</h1>
+            <p class="subtitle">
+                Software Engineer Intern at TD Bank, Toronto - Summer 2026. Enterprise Risk Technology.
+            </p>
+        </div>
+        <nav class="wrap" aria-label="Report sections">
+            <a href="#intro">Introduction</a>
+            <a href="#employer">Employer</a>
+            <a href="#goals">Goals</a>
+            <a href="#job">Job</a>
+            <a href="#reflection">Reflection</a>
+            <a href="#conclusion">Conclusion</a>
+            <a href="#thanks">Thanks</a>
+        </nav>
+    </header>
+
+    <main class="wrap">
+        <section id="intro">
+            <h2>Abstract / Introduction</h2>
+            <p>
+                For my fifth co-op term, I continued working as a Software Engineer Intern at TD Bank. This was the
+                second half of my eight-month placement with the Enterprise Governance, Risk, and Compliance team.
+            </p>
+            <p>
+                My work focused on improving the team's ServiceNow development process. I built Python tools for
+                exporting scripts into GitHub, wrote Jest tests for existing business logic, automated an access-control
+                workflow, and created data pipelines for Power BI reporting.
+            </p>
+            <p>
+                Since I already knew the team and the system from my fourth term, I was able to work more independently
+                and take on projects that affected the team's regular development and support work.
+            </p>
+        </section>
+
+        <section id="employer">
+            <h2>About the Employer</h2>
+            <p>
+                TD Bank is one of Canada's largest financial institutions, with operations across banking, investing,
+                insurance, and internal technology systems. I continued working from TD Terrace in Toronto with the
+                same managers and team as my fourth work term.
+            </p>
+            <p>
+                My team worked on internal Enterprise Governance, Risk, and Compliance software. The systems support
+                governance workflows, access control, system changes, and internal reporting. This report leaves out
+                confidential implementation details and focuses on the work and skills I developed.
+            </p>
+            <div class="image-row">
+                <figure class="photo-card">
+                    <img src="/fourth-work-report/TdTerrace.jpg" width="960" height="1280"
+                        alt="TD Terrace building">
+                    <figcaption>TD Terrace, where I worked during the term.</figcaption>
+                </figure>
+                <figure class="photo-card">
+                    <img src="/fourth-work-report/ServiceNow.jpeg" width="1024" height="559"
+                        alt="ServiceNow platform logo">
+                    <figcaption>ServiceNow was the main platform used by my team.</figcaption>
+                </figure>
+            </div>
+        </section>
+
+        <section id="goals">
+            <h2>Learning Goals</h2>
+
+            <div class="goal">
+                <h3>Goal 1 - Critical &amp; Creative Thinking: Problem Solving</h3>
+                <p><strong>Goal:</strong> Build a structured approach to debugging and root cause analysis in enterprise
+                    software environments.</p>
+                <p><strong>Action plan:</strong> Apply systematic debugging methods when investigating script failures;
+                    log findings and solutions for reference.</p>
+                <p><strong>Measure of success:</strong> Reduce time-to-resolution on recurring issues by maintaining a
+                    personal knowledge base of fixes by the end of the term.</p>
+                <p>
+                    <strong>Reflection:</strong> I became more systematic when debugging. Instead of reading through a
+                    script and guessing, I tried to reproduce the issue, isolate the relevant logic, and verify the fix
+                    with a test. Exporting the ServiceNow scripts into GitHub made the code searchable in VS Code and
+                    gave me version history to compare. The Jest tests also gave me a record of past issues and expected
+                    behaviour. I did not formally measure the time saved on every issue, but recurring problems became
+                    easier to trace and check.
+                </p>
+            </div>
+
+            <div class="goal">
+                <h3>Goal 2 - Communicating: Oral Communication</h3>
+                <p><strong>Goal:</strong> Develop the ability to clearly communicate technical findings to non-technical
+                    stakeholders.</p>
+                <p><strong>Action plan:</strong> Document code review findings in plain language and present updates
+                    during team check-ins.</p>
+                <p><strong>Measure of success:</strong> Receive positive feedback from a supervisor on at least one
+                    written report or presentation delivered during the term.</p>
+                <p>
+                    <strong>Reflection:</strong> I practised explaining my work in terms of the problem and result instead
+                    of only describing the code. For example, I explained the access-control automation by focusing on
+                    the manual work it removed, and I described the dashboards by the information they made available.
+                    I also explained the benefits of Git versioning, code search, and automated tests when introducing
+                    the new development workflow. Its adoption across the team showed me that the purpose and value of
+                    the tool were understood.
+                </p>
+            </div>
+
+            <div class="goal">
+                <h3>Goal 3 - Literacy: Technological Literacy</h3>
+                <p><strong>Goal:</strong> Strengthen proficiency in JavaScript and ServiceNow development through hands-on
+                    GRC scripting work.</p>
+                <p><strong>Action plan:</strong> Write and review business rules, script includes, and scheduled jobs;
+                    seek feedback from senior developers.</p>
+                <p><strong>Measure of success:</strong> Successfully identify and resolve at least three bugs in
+                    production scripts with documented fixes.</p>
+                <p>
+                    <strong>Reflection:</strong> I spent the term working directly with ServiceNow scripts and their
+                    JavaScript business logic. Writing Jest tests required me to understand the code, its ServiceNow
+                    dependencies, and the edge cases it needed to handle. I also used that knowledge when building the
+                    access-control workflow. Code review and feedback from more experienced developers helped me make my
+                    changes safer and easier to maintain. By the end of the term, I was much more comfortable reading,
+                    testing, debugging, and changing ServiceNow code.
+                </p>
+            </div>
+        </section>
+
+        <section id="job">
+            <h2>Job Description</h2>
+            <p>
+                My work covered developer tooling, testing, workflow automation, and reporting.
+            </p>
+
+            <h3>ServiceNow Script Export and Git Workflow</h3>
+            <p>
+                I developed Python tooling to export ServiceNow scripts and organize them in GitHub. This allowed the
+                team to work with the scripts in VS Code, search across the codebase, review Git history, and use GitHub
+                Copilot. The workflow was adopted by the team and made the scripts easier to find and review.
+            </p>
+
+            <h3>Jest Testing</h3>
+            <p>
+                I added Jest test suites for selected ServiceNow business logic. The tests reached more than 80% coverage
+                in the targeted areas and provided a repeatable way to check behaviour after code changes.
+            </p>
+
+            <h3>Access-Control Workflow Automation</h3>
+            <p>
+                Organizational changes and group renames required access-control relationships to be relinked. I
+                implemented a ServiceNow workflow that automated this process and eliminated about two weeks of manual
+                work.
+            </p>
+
+            <h3>Data Pipelines and Reporting</h3>
+            <p>
+                I implemented Python ETL pipelines that moved data from ServiceNow into Microsoft SQL Server. The data
+                was used in Power BI dashboards for deployments, developer activity, and system changes.
+            </p>
+
+            <h3>Key Technologies</h3>
+            <ul>
+                <li><strong>Development:</strong> Python, JavaScript, ServiceNow, VS Code.</li>
+                <li><strong>Testing and version control:</strong> Jest, Git, GitHub, GitHub Copilot.</li>
+                <li><strong>Data and reporting:</strong> Microsoft SQL Server, Power BI.</li>
+            </ul>
+        </section>
+
+        <section id="reflection">
+            <h2>Overall Reflection</h2>
+            <p>
+                Staying with the same team for a second term let me contribute differently. During my fourth term, I
+                spent more time learning how the platform and existing code worked. This term, I could use that
+                knowledge to improve the development process itself.
+            </p>
+            <p>
+                The Git workflow was a good example. Writing the exporter was only part of the work. The scripts also
+                needed to be organized in a way that made sense to other developers. Seeing the team use VS Code, Git
+                history, search, tests, and Copilot with the exported code showed me that internal tools need to be
+                useful and easy to adopt.
+            </p>
+            <p>
+                The access-control workflow showed me the value of understanding a manual process before automating it.
+                The ETL work also gave me more experience following data across ServiceNow, SQL Server, and Power BI.
+                Overall, I became more independent and more comfortable working across different parts of an enterprise
+                system.
+            </p>
+        </section>
+
+        <section id="conclusion">
+            <h2>Conclusion</h2>
+            <p>
+                During my fifth co-op term, I improved my skills in Python, JavaScript, ServiceNow, Jest, Git, SQL
+                Server, and Power BI. I also improved at debugging existing systems, explaining technical work, and
+                building tools that other developers could use.
+            </p>
+            <p>
+                The term gave me a better understanding of the work around software development: testing, version
+                control, automation, data movement, and reporting. These are areas I expect to keep using in future
+                software engineering roles.
+            </p>
+        </section>
+
+        <section id="thanks">
+            <h2>Acknowledgments</h2>
+            <p>
+                I would like to thank my managers, Bill Qian and Meenal Warang, as well as my team at TD Bank, for their
+                continued guidance, feedback, and support throughout the term. I also appreciate the University of
+                Guelph co-op program for providing the opportunity to gain this experience.
+            </p>
+        </section>
+    </main>
+
+    <footer>
+        Jerry You - Software Engineer Intern, TD Bank - Summer 2026
+    </footer>
+</body>
+
+</html>
