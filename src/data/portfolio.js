@@ -44,7 +44,7 @@ export const experiences = [
     company: "Clio",
     role: "Software Engineer Intern",
     dates: "Sep 2026 – Present",
-    description: "Legal Practice Management Software",
+    description: "Billing & Invoicing",
     technologies: ["Ruby on Rails",
       "Ruby",
       "AWS"],
@@ -66,25 +66,6 @@ export const experiences = [
     logo: { type: "image", src: "/TD.png", alt: "TD Bank logo" },
   },
   {
-    company: "Health Espresso",
-    role: "Software Developer Intern",
-    dates: "May 2025 – Aug 2025",
-    description: "Application Development & Automation",
-    technologies: [
-      "TypeScript",
-      "NestJS",
-      "Flutter",
-      "AWS",
-      "Selenium",
-      "PostgreSQL",
-    ],
-    logo: {
-      type: "image",
-      src: "/HE.png",
-      alt: "Health Espresso logo",
-    },
-  },
-  {
     company: "Johnson Electric",
     role: "Data Engineer Intern",
     dates: "Sep 2024 – Dec 2024",
@@ -101,18 +82,6 @@ export const experiences = [
       type: "image",
       src: "/JE.png",
       alt: "Johnson Electric logo",
-    },
-  },
-  {
-    company: "University of Guelph",
-    role: "Software Developer Intern",
-    dates: "May 2024 – Aug 2024",
-    description: "Biomechanics Research Software",
-    technologies: ["Python", "JavaScript", "Visual3D"],
-    logo: {
-      type: "image",
-      src: "/UofG.jpg",
-      alt: "University of Guelph logo",
     },
   },
 ];
