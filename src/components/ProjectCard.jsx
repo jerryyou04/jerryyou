@@ -1,17 +1,64 @@
-import { FiExternalLink, FiGithub } from "react-icons/fi";
+import { useRef } from "react";
+import { FiExternalLink, FiGithub, FiMaximize2, FiX } from "react-icons/fi";
 
 function ProjectPreview({ name, preview }) {
+  const dialogRef = useRef(null);
+  const triggerRef = useRef(null);
+
   if (!preview?.src) return null;
 
   return (
-    <div className="project-preview project-preview--image">
-      <img
-        src={preview.src}
-        alt={preview.alt ?? `${name} interface`}
-        loading="lazy"
-        decoding="async"
-      />
-    </div>
+    <>
+      <button
+        ref={triggerRef}
+        className="project-preview-button"
+        type="button"
+        onClick={() => dialogRef.current?.showModal()}
+        aria-label={`Expand ${name} screenshot`}
+        aria-haspopup="dialog"
+      >
+        <span className="project-preview project-preview--image">
+          <img
+            src={preview.src}
+            alt={preview.alt ?? `${name} interface`}
+            loading="lazy"
+            decoding="async"
+          />
+        </span>
+        <span className="project-preview-caption" aria-hidden="true">
+          Expand screenshot <FiMaximize2 />
+        </span>
+      </button>
+
+      <dialog
+        ref={dialogRef}
+        className="project-image-dialog"
+        aria-label={`${name} screenshot`}
+        onClose={() => triggerRef.current?.focus({ preventScroll: true })}
+        onClick={(event) => {
+          if (event.target === event.currentTarget) {
+            event.currentTarget.close();
+          }
+        }}
+      >
+        <div className="project-image-dialog-header">
+          <h2>{name}</h2>
+          <button
+            type="button"
+            className="project-image-close"
+            aria-label="Close screenshot"
+            onClick={() => dialogRef.current?.close()}
+          >
+            <FiX aria-hidden="true" />
+          </button>
+        </div>
+        <img
+          src={preview.src}
+          alt={preview.alt ?? `${name} interface`}
+          decoding="async"
+        />
+      </dialog>
+    </>
   );
 }
 

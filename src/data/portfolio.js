@@ -110,7 +110,7 @@ export const projects = [
     demoUrl: "https://pctracker.ca",
     preview: {
       src: "/PCTracker.png",
-      alt: "PCTracker component search and price comparison interface",
+      alt: "PCTracker PC build editor with component benchmarks and price history",
     },
   },
   {
@@ -130,7 +130,7 @@ export const projects = [
     demoUrl: "https://geoturing.com",
     preview: {
       src: "/GeoTuring.png",
-      alt: "GeoTuring real-time chat and identity guessing interface",
+      alt: "GeoTuring round result with conversation, identity reveal, and map guess",
     },
   },
 ];
