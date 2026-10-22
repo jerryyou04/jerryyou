@@ -520,7 +520,7 @@ html[data-theme="light"] .company-mark--green {
   border: 0;
   background: transparent;
   text-align: left;
-  cursor: zoom-in;
+  cursor: pointer;
 }
 
 .project-preview {
