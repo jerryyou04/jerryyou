@@ -23,7 +23,7 @@
         },
         {
           "key": "Content-Disposition",
-          "value": "inline; filename=\"Jerry-You-Resume.pdf\""
+          "value": "inline; filename=\"resume.pdf\""
         }
       ]
     }
